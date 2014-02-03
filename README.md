@@ -56,6 +56,8 @@ You can configure several options, which you pass in to the `provider` method vi
 
 * `access_type`: Defaults to `offline`, so a refresh token is sent to be used when the user is not present at the browser. Can be set to `online`. Note that if you need a refresh token, google requires you to also to specify the option `prompt: 'consent'`, which is not a default.
 
+* `include_granted_scopes`: If this is provided with the value true, and the authorization request is granted, the authorization will include any previous authorizations granted to this user/application combination for other scopes. See Google's [Incremental Autorization](https://developers.google.com/accounts/docs/OAuth2WebServer#incrementalAuth) for additional details.
+
 Here's an example of a possible configuration where the strategy name is changed, the user is asked for extra permissions, the user is always prompted to select his account when logging in and the user's profile picture is returned as a thumbnail:
 
 ```ruby
